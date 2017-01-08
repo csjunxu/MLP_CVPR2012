@@ -1,4 +1,6 @@
 function s=csnr(A,B,row,col)
+
+[~,~,~]=size(A);
 [n,m,ch]=size(B);
 A=double(A);
 B=double(B);
@@ -17,6 +19,9 @@ else
    me3=mean(mean(e3.^2));
    mse=(me1+me2+me3)/3;
    s  = 10*log10(255^2/mse);
+%    s(1)=10*log10(255^2/me1);
+%    s(2)=10*log10(255^2/me2);
+%    s(3)=10*log10(255^2/me3);
 end
 
 
